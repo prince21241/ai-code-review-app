@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:16
+    container_name: acra_db
+    environment:
+      POSTGRES_USER: acra
+      POSTGRES_PASSWORD: acra
+      POSTGRES_DB: acra
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
