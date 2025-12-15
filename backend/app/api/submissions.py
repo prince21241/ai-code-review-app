@@ -1,14 +1,10 @@
 import logging
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
-from app.database import Base, engine, get_db
+from app.database import get_db
 from app.models.submission import Submission
 from app.schemas.submission import SubmissionCreate, SubmissionOut
-from app.analyzers.basic import generate_basic_review
 from app.jobs.review_job import get_queue, run_review
-
-# Create tables on first run (simple for MVP)
-Base.metadata.create_all(bind=engine)
 
 router = APIRouter(prefix="/submissions", tags=["submissions"])
 

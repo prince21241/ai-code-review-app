@@ -1,8 +1,12 @@
 import os
+from dotenv import load_dotenv
 from rq import Worker
 from rq import Queue
 from rq import Connection
 from redis import Redis
+
+# Load environment variables from .env file
+load_dotenv()
 
 
 def main():

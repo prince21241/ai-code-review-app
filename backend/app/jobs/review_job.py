@@ -5,7 +5,7 @@ from sqlalchemy.orm import Session
 
 from app.database import SessionLocal
 from app.models.submission import Submission
-from app.analyzers.basic import generate_basic_review
+from app.analyzers.ai import generate_ai_review
 
 
 def get_queue() -> Queue:
@@ -25,7 +25,7 @@ def run_review(submission_id: int) -> None:
         db.commit()
         db.refresh(s)
 
-        review_text = generate_basic_review(s.code, s.language)
+        review_text = generate_ai_review(s.code, s.language)
         s.review = review_text
         s.status = "reviewed"
         db.add(s)
