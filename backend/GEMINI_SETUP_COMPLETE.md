@@ -94,3 +94,5 @@ If Gemini API fails (network issue, rate limit, etc.), the app automatically fal
 
 Your AI code review app is now powered by Google Gemini! Submit code through the UI and enjoy AI-powered reviews! 🚀
 
+
+
