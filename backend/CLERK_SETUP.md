@@ -77,3 +77,6 @@ For production, you should:
 3. Store keys securely (use environment variables, never commit to git)
 4. Add `.env.local` and `.env` to `.gitignore`
 
+
+
+

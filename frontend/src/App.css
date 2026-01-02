@@ -9,6 +9,10 @@
   border-radius: 10px;
 }
 
+.dark ::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   border-radius: 10px;
@@ -266,6 +270,10 @@ pre:hover {
   animation: fadeIn 0.6s ease-out;
 }
 
+.dark .prose {
+  color: #d1d5db;
+}
+
 .prose h3 {
   color: #111827;
   font-weight: 700;
@@ -274,12 +282,20 @@ pre:hover {
   animation: fadeInUp 0.5s ease-out;
 }
 
+.dark .prose h3 {
+  color: #f9fafb;
+}
+
 .prose h4 {
   color: #1f2937;
   font-weight: 600;
   margin-top: 1rem;
   margin-bottom: 0.25rem;
   animation: fadeInUp 0.6s ease-out;
+}
+
+.dark .prose h4 {
+  color: #f3f4f6;
 }
 
 .prose p {
@@ -303,9 +319,18 @@ pre:hover {
   transition: all 0.2s ease;
 }
 
+.dark .prose code {
+  background: linear-gradient(135deg, #374151 0%, #4b5563 100%);
+  color: #e5e7eb;
+}
+
 .prose code:hover {
   background: linear-gradient(135deg, #e5e7eb 0%, #d1d5db 100%);
   transform: scale(1.05);
+}
+
+.dark .prose code:hover {
+  background: linear-gradient(135deg, #4b5563 0%, #6b7280 100%);
 }
 
 /* Smooth scroll behavior */
@@ -323,6 +348,11 @@ html {
 /* Selection styles */
 ::selection {
   background: rgba(102, 126, 234, 0.3);
+  color: inherit;
+}
+
+.dark ::selection {
+  background: rgba(102, 126, 234, 0.5);
   color: inherit;
 }
 
@@ -352,4 +382,38 @@ html {
 
 .animate-glow {
   animation: glow 2s ease-in-out infinite;
+}
+
+/* CodeMirror line highlighting for errors/issues */
+.cm-line-highlight-light {
+  background-color: rgba(239, 68, 68, 0.2) !important;
+}
+
+.cm-line-highlight-light::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: rgba(239, 68, 68, 0.8);
+}
+
+.cm-line-highlight-dark {
+  background-color: rgba(239, 68, 68, 0.3) !important;
+}
+
+.cm-line-highlight-dark::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: rgba(239, 68, 68, 1);
+}
+
+/* Ensure the line element is positioned relatively */
+.cm-line {
+  position: relative;
 }
