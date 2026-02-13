@@ -311,26 +311,19 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 relative overflow-hidden transition-colors duration-300">
-      {/* Animated background elements */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-300 dark:bg-purple-900 rounded-full mix-blend-multiply filter blur-xl opacity-20 dark:opacity-10 animate-float"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-300 dark:bg-blue-900 rounded-full mix-blend-multiply filter blur-xl opacity-20 dark:opacity-10 animate-float" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-indigo-300 dark:bg-indigo-900 rounded-full mix-blend-multiply filter blur-xl opacity-20 dark:opacity-10 animate-float" style={{ animationDelay: '4s' }}></div>
-      </div>
-
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 relative overflow-hidden">
       {/* Header */}
-      <header className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700 shadow-sm sticky top-0 z-50 animate-fade-in">
+      <header className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700 shadow-sm sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-lg flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 animate-scale-in">
+              <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-lg flex items-center justify-center shadow-lg">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                 </svg>
               </div>
               <div>
-                <h1 className="text-2xl font-bold gradient-text dark:text-white animate-fade-in">
+                <h1 className="text-2xl font-bold gradient-text dark:text-white">
                   AI Code Review
                 </h1>
               </div>
@@ -339,7 +332,7 @@ function App() {
               {/* Dark Mode Toggle */}
               <button
                 onClick={toggleDarkMode}
-                className="p-2 rounded-lg text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300"
+                className="p-2 rounded-lg text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800"
                 aria-label="Toggle dark mode"
               >
                 {isDarkMode ? (
@@ -356,7 +349,7 @@ function App() {
                 href="https://github.com/prince21241"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-all duration-300 hover:scale-110 animate-fade-in"
+                className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
                 aria-label="Visit Prince Raval's GitHub profile"
               >
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -366,12 +359,12 @@ function App() {
               <SignedOut>
                 <div className="flex items-center space-x-2">
                   <SignInButton mode="modal">
-                    <button className="px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-all duration-300 hover:scale-105 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
+                    <button className="px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
                       Sign In
                     </button>
                   </SignInButton>
                   <SignUpButton mode="modal">
-                    <button className="px-4 py-2 text-sm font-medium bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-500 dark:to-indigo-500 text-white rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300 transform">
+                    <button className="px-4 py-2 text-sm font-medium bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-500 dark:to-indigo-500 text-white rounded-lg hover:shadow-lg">
                       Sign Up
                     </button>
                   </SignUpButton>
@@ -388,19 +381,19 @@ function App() {
       <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
         <SignedOut>
           <div className="flex flex-col items-center justify-center min-h-[60vh] text-center relative z-10">
-            <div className="max-w-md animate-fade-in-up">
-              <h2 className="text-4xl font-bold gradient-text dark:text-white mb-4 animate-fade-in">Welcome to AI Code Review</h2>
-              <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 animate-fade-in animate-delay-200">
+            <div className="max-w-md">
+              <h2 className="text-4xl font-bold gradient-text dark:text-white mb-4">Welcome to AI Code Review</h2>
+              <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
                 Sign in to start reviewing your code with AI-powered analysis
               </p>
-              <div className="flex items-center justify-center space-x-4 animate-fade-in-up animate-delay-300">
+              <div className="flex items-center justify-center space-x-4">
                 <SignInButton mode="modal">
-                  <button className="px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105 transition-all duration-300 button-pulse">
+                  <button className="px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-medium rounded-lg shadow-lg hover:shadow-xl">
                     Sign In
                   </button>
                 </SignInButton>
                 <SignUpButton mode="modal">
-                  <button className="px-6 py-3 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 font-medium rounded-lg border-2 border-gray-300 dark:border-gray-600 hover:border-blue-500 dark:hover:border-blue-400 hover:bg-blue-50 dark:hover:bg-gray-700 transform hover:-translate-y-1 hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg">
+                  <button className="px-6 py-3 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 font-medium rounded-lg border-2 border-gray-300 dark:border-gray-600 hover:border-blue-500 dark:hover:border-blue-400 hover:bg-blue-50 dark:hover:bg-gray-700 shadow-md hover:shadow-lg">
                     Sign Up
                   </button>
                 </SignUpButton>
@@ -589,10 +582,10 @@ function App() {
       </main>
 
       {/* Footer */}
-      <footer className="mt-auto py-6 border-t border-gray-200 dark:border-gray-700 bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm relative z-10 animate-fade-in">
+      <footer className="mt-auto py-6 border-t border-gray-200 dark:border-gray-700 bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-sm text-gray-600 dark:text-gray-400">
-            Designed & Developed by <span className="font-semibold gradient-text dark:text-white">Prince Raval</span> · © 2025
+            Designed & Developed by <span className="font-semibold gradient-text dark:text-white">Prince Raval</span> · © 2026
           </p>
         </div>
       </footer>
